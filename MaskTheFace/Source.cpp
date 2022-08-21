@@ -14,10 +14,10 @@ int main() {
 
 	cv::Mat img;
 
-	cv::Mat maskImg = cv::imread("C:/Users/i2v/source/repos/MaskTheFace/masks/templates/cloth.png");
+	cv::Mat maskImg = cv::imread("E:/MaskTheFace/maskTemplate/cloth.png");
 
-	cv::dnn::Net faceDetection = cv::dnn::readNetFromModelOptimizer("C:/Program Files (x86)/Intel/openvino_2021.4.752/deployment_tools/tools/model_downloader/intel/face-detection-retail-0005/FP32/face-detection-retail-0005.xml", "C:/Program Files (x86)/Intel/openvino_2021.4.752/deployment_tools/tools/model_downloader/intel/face-detection-retail-0005/FP32/face-detection-retail-0005.bin");
-	cv::dnn::Net landmarkDetection = cv::dnn::readNet("C:/Program Files (x86)/Intel/openvino_2021.4.752/deployment_tools/open_model_zoo/tools/downloader/intel/facial-landmarks-35-adas-0002/FP32/facial-landmarks-35-adas-0002.bin", "C:/Program Files (x86)/Intel/openvino_2021.4.752/deployment_tools/open_model_zoo/tools/downloader/intel/facial-landmarks-35-adas-0002/FP32/facial-landmarks-35-adas-0002.xml");
+	cv::dnn::Net faceDetection = cv::dnn::readNetFromModelOptimizer("E:/MaskTheFace/models/faceDetection/face-detection-retail-0005.xml", "E:/MaskTheFace/models/faceDetection/face-detection-retail-0005.bin");
+	cv::dnn::Net landmarkDetection = cv::dnn::readNet("E:/MaskTheFace/models/facialLandmark/facial-landmarks-35-adas-0002.bin", "E:/MaskTheFace/models/facialLandmark/facial-landmarks-35-adas-0002.xml");
 
 	std::vector<cv::Point2i> maskPoints{
 		//{131, 93}, {400, 10}, {678, 83}, {413, 499}, {406, 509}, {165, 323}
