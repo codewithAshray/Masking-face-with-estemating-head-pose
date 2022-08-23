@@ -55,7 +55,8 @@ int main() {
 		int y1 = static_cast<int>((detectedFaces.at<float>(0, 4) * img.rows) - (img.rows * 0.05));
 		int x2 = static_cast<int>((detectedFaces.at<float>(0, 5) * img.cols) + (img.cols * 0.05));
 		int y2 = static_cast<int>((detectedFaces.at<float>(0, 6) * img.rows) + (img.rows * 0.05));
-
+		
+		// If face not detected throw warning 
 		if (x1 < 0 || y1 < 0 || x2 > img.cols || y2 > img.rows) {
 			cv::putText(img, "Stay in front of the camera", cv::Point(15, 45), cv::FONT_HERSHEY_DUPLEX, 1, cv::Scalar(0, 0, 255), 2, cv::LINE_AA);
 			cv::imshow("Mask Filter", img);
